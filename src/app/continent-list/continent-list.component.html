@@ -1,10 +1,10 @@
 <div class=" border border-class">
-    <h2 class="h2-class">List continent</h2>
+    <h2 class="h2-class">La Liste des continents</h2>
 </div>
 
 
 
-<button mat-raised-button class="btn btn-info " style="float: right; " (click)="addContinent()">Add</button>
+<button mat-raised-button class="btn btn-info " style="float: right; " (click)="addContinent()">Ajouter</button>
 <!-- style="float: right; margin:10px; -->
 <div class="col-md-3  " style="margin:10px ">
     <form>
@@ -30,13 +30,13 @@
 
         <!-- code Column -->
         <ng-container matColumnDef="code">
-            <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Continent code </mat-header-cell>
             <mat-cell *matCellDef="let continent">{{continent.ccode}}</mat-cell>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Continent name</mat-header-cell>
             <mat-cell *matCellDef="let continent ">{{continent.cname}}</mat-cell>
         </ng-container>
 <!--
