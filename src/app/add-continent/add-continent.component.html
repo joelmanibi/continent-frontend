@@ -1,0 +1,28 @@
+<br />
+<div class="container border border-info" width="200px">
+    <h3>Creer continent</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="name">Code</label>
+                <input type="text" class="form-control" id="code" required [(ngModel)]="continent.ccode" name="code">
+            </div><br />
+            
+            <div class="form-group">
+                <label for="name"> Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="continent.cname" name="name">
+            </div><br />
+
+            <button type="submit" class="btn btn-success">creer</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h4>Continent cree avec success </h4>
+
+    </div>
+    <br>
+    <br>
+    <button (click)=" continentsList()" class="btn btn-primary">Retour</button><br>
+</div>

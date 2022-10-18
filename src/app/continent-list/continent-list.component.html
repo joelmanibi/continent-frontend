@@ -1,0 +1,67 @@
+<div class=" border border-class">
+    <h2 class="h2-class">List continent</h2>
+</div>
+
+
+
+<button mat-raised-button class="btn btn-info " style="float: right; " (click)="addContinent()">Add</button>
+<!-- style="float: right; margin:10px; -->
+<div class="col-md-3  " style="margin:10px ">
+    <form>
+        <input type="text" [(ngModel)]="squery" class="form-control" (input)="search()" name="squery"
+            placeholder="search continent">
+
+    </form>
+</div>
+
+<span></span>
+
+<div>
+
+
+    <mat-table class="continents-table mat-elevation-z8" [dataSource]="continents" matSort>
+
+        <!-- <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+            <mat-cell *matCellDef="let user ">{{user.id}}</mat-cell>
+        </ng-container> -->
+
+        
+
+        <!-- code Column -->
+        <ng-container matColumnDef="code">
+            <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
+            <mat-cell *matCellDef="let continent">{{continent.ccode}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let continent ">{{continent.cname}}</mat-cell>
+        </ng-container>
+<!--
+        <ng-container matColumnDef="actionu">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                <button mat-raised-button class="btn btn-info " (click)="editUser(user.id)">Update</button>
+            </mat-cell>
+        </ng-container>
+
+        -->
+
+        
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        <mat-paginator [length]="10" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+        </mat-paginator>
+
+
+
+    </mat-table>
+    <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+        <h3>Loading.....</h3>
+    </div>
+
+
+</div>
